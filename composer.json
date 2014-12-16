@@ -1,0 +1,21 @@
+{
+    "name": "pokap/uslugify",
+    "type": "library",
+    "description": "Converts a string into unicode slugs.",
+    "keywords": ["slug", "slugify"],
+    "license": "MIT",
+    "authors": [
+        { "name": "Florent Denis", "email": "dflorent.pokap@gmail.com" }
+    ],
+    "require": {
+      "php": ">=5.3.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "USlugify\\": "src"
+        }
+    }
+}
