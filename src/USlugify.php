@@ -19,7 +19,7 @@ class USlugify implements USlugifyInterface
         $text = str_replace($reservedChars, '-', $text);
         $text = trim(preg_replace('/[-\s]+/', '-', $text), '-');
 
-        return mb_strtolower($text);
+        return mb_strtolower($text, mb_detect_encoding($text));
     }
 
     /**
