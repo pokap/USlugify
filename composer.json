@@ -2,7 +2,7 @@
     "name": "pokap/uslugify",
     "type": "library",
     "description": "Converts a string into unicode slugs.",
-    "keywords": ["slug", "slugify"],
+    "keywords": ["slug", "slugify", "slugifier", "unicode"],
     "license": "MIT",
     "authors": [
         { "name": "Florent Denis", "email": "dflorent.pokap@gmail.com" }
