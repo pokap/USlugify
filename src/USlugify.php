@@ -17,6 +17,7 @@ class USlugify implements USlugifyInterface
         $reservedChars = $this->getReservedChars();
 
         $text = str_replace($reservedChars, '-', $text);
+        $text = preg_replace('/\p{Mn}+/u', '-', $text);
         $text = trim(preg_replace('/[-\s]+/u', '-', $text), '-');
 
         return mb_strtolower($text, mb_detect_encoding($text));
