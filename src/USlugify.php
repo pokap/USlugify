@@ -12,15 +12,15 @@ class USlugify implements USlugifyInterface
     /**
      * {@inheritdoc}
      */
-    public function slugify($text)
+    public function slugify($text, $separator = '-')
     {
         $reservedChars = $this->getReservedChars();
 
         $text = str_replace($reservedChars, '-', $text);
-        $text = preg_replace('/\p{Mn}+/u', '-', $text);
+        $text = preg_replace('/[\p{M}\p{Z}\p{C}]+/u', '', $text);
         $text = trim(preg_replace('/[-\s]+/u', '-', $text), '-');
 
-        return mb_strtolower($text, mb_detect_encoding($text));
+        return $text;
     }
 
     /**
@@ -31,6 +31,6 @@ class USlugify implements USlugifyInterface
      */
     protected function getReservedChars()
     {
-        return array('!', '#', '$', '&', '\'', '"', '(', ')', '*', '+', ',', '/', ':', ';', '=', '?', '@', '[', ']');
+        return array(' ', '!', '#', '$', '&', '\'', '"', '(', ')', '*', '+', ',', '/', ':', ';', '=', '?', '@', '[', ']');
     }
 }
